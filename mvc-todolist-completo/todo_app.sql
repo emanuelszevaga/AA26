@@ -26,14 +26,13 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `tareas`
 --
-
 CREATE TABLE `tareas` (
   `id` int(11) NOT NULL,
   `descripcion` varchar(255) NOT NULL,
   `completada` tinyint(1) NOT NULL DEFAULT 0,
-  `fecha_creacion` timestamp NOT NULL DEFAULT current_timestamp()
+  `fecha_creacion` timestamp NOT NULL DEFAULT current_timestamp(),
+  `completed_at` datetime DEFAULT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 --
 -- Volcado de datos para la tabla `tareas`
 --

@@ -25,8 +25,9 @@ try {
             $response = ['status' => 'success', 'message' => 'Task completed'];
         }
     } elseif ($_SERVER['REQUEST_METHOD'] === 'GET' && $_GET['action'] === 'getTasks') {
-        $pendingTasks = $taskModel->getAllTasks('pending');
-        $completedTasks = $taskModel->getAllTasks('completed');
+        // Solución: pasar valores enteros 0 para pendiente, 1 para completada
+        $pendingTasks = $taskModel->getAllTasks(0);
+        $completedTasks = $taskModel->getAllTasks(1);
         $response = [
             'status' => 'success',
             'pendingTasks' => $pendingTasks,
